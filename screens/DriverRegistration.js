@@ -5,6 +5,7 @@ export default function DriverRegistration() {
     return(
         <View>
              <Text>Driver Registration Screen</Text>
+             <Text>Driver Registration Screen</Text>
              
         </View>
         
