@@ -9,11 +9,11 @@ export default function HomeScreen({navigation}) {
         <View>
             <Button
                 title="Register as Driver"
-                onPress={() => navigation.navigate("DriverRegistration", {language:"french"})}
+                onPress={() => navigation.navigate("DriverRegistration")}
             />
             <Button
                 title="Register as Passenger"
-                onPress={() => navigation.navigate("PassengerRegistration", {language:"english"})}
+                onPress={() => navigation.navigate("PassengerRegistration")}
             />
         </View>
         
