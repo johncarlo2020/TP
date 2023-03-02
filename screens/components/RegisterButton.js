@@ -8,15 +8,14 @@ export default function RegisterButton() {
 const navigation=useNavigation();
     return (
         <View style={styles.container}>
-            <View style={styles.buttonSignUp}>
-                <Button
-                    title="SIGN UP"
-                    color='white'
-                    onPress={() =>
-                        navigation.navigate('Register as', {name: 'Register as'})
-                      }
-                />
-            </View>
+            <TouchableOpacity 
+                style={styles.buttonSignUp}
+                onPress={() =>
+                    navigation.navigate('Register as', {name: 'Register as'})
+                  }
+                > 
+                <Text style={styles.btnSignUp}>SIGN UP</Text>
+            </TouchableOpacity>
         </View>
 
     )
@@ -28,12 +27,16 @@ const styles = StyleSheet.create({
         width:'70%',
     },
 
+    btnSignUp:{
+        color:'white',
+        textAlign:'center',
+    },
 
     buttonSignUp:{
         width:'100%',
         margin:10,
         backgroundColor:'#e2012b',
         borderRadius:25,
-        padding:5,
+        padding:10,
     }
 });

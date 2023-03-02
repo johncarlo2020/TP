@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Button, Image, TextInput} from 'react-native';
+import { StyleSheet, Text, View, Button, Image, TextInput, TouchableOpacity} from 'react-native';
 import Logo from './components/Logo';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import { useNavigation } from '@react-navigation/native';
@@ -18,22 +18,31 @@ export default function RegisterAs() {
 
         <View style={styles.buttons}>
             <View style={styles.buttonPassenger}>
-                <Button
-                    style={styles.driver} 
-                    title="DRIVER"
-                    color='white'
-                    onPress={() => navigation.navigate('Driver', {name: 'Driver'})}
-                />
+              <TouchableOpacity 
+                style={styles.driver}
+                onPress={() =>
+                    navigation.navigate('Driver', {name: 'Driver'})
+                  }
+              > 
+                <Text style={styles.driver}>DRIVER</Text>
+              </TouchableOpacity>
             </View>
               
             <View style={styles.buttonPassenger}>
-                <Button
+                {/* <Button
                     style={styles.driver} 
                     title="PASSENGER"
                     color='white'
                     onPress={() => navigation.navigate('Passenger', {name: 'Passenger'})}
-                    
-                />
+                /> */}
+                <TouchableOpacity 
+                  style={styles.driver}
+                  onPress={() =>
+                      navigation.navigate('Passenger', {name: 'Passenger'})
+                    }
+                > 
+                  <Text style={styles.driver}>PASSENGER</Text>
+                </TouchableOpacity>
             </View>
         </View>
       </View>
@@ -79,7 +88,7 @@ const styles = StyleSheet.create({
 
 
   driver:{
-    padding: '14%',
+    padding: '5%',
     backgroundColor:'#05adca',
     borderRadius:5,
     shadowColor: "#000000",
@@ -88,7 +97,9 @@ const styles = StyleSheet.create({
     shadowOffset: {
       height: 5,
       width: 5
-    }
+    },
+    color:'white',
+    fontSize: 17,
   },
 
   image: {

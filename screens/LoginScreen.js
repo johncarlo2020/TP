@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Button, Image, TextInput} from 'react-native';
+import { StyleSheet, Text, View, Button, Image, TextInput, TouchableOpacity} from 'react-native';
 import Logo from './components/Logo';
 import Ionicons from '@expo/vector-icons/Ionicons';
 
@@ -7,10 +7,7 @@ export default function LoginScreen() {
     return (
       <View style={styles.startContainer}>
       <Logo/>
-      {/* <Text style={styles.title}>Welcome to</Text>
-      <Text style={styles.title}>TraykPila</Text> */}
       <Text style={styles.title}>Login</Text>
-      {/* <Text style={styles.tag}>Your number one tricycle booking App in the Philippines.</Text> */}
       <View style={styles.textFields}>
         <Ionicons style={styles.icon} name="md-checkmark-circle" size={32} color="#003b59" />
         <TextInput style={styles.input} placeholder="Email"/>
@@ -25,33 +22,47 @@ export default function LoginScreen() {
       <Text style={styles.with}> ______________ Or Continue with ______________</Text>
       
       <View style={styles.continueFacebook}>
-         <Button
-            title="Facebook"
-            color='white'
-          />
+            <TouchableOpacity 
+                style={styles.btnFacebook}
+                // onPress={() =>
+                //     navigation.navigate('Register as', {name: 'Register as'})
+                //   }
+                > 
+                <Text style={styles.btnFacebook}>FACEBOOK</Text>
+            </TouchableOpacity>
       </View>
       <View style={styles.continueGoogle}>
-         <Button
-            title="Google"
-            color='white'
-          />
+            <TouchableOpacity 
+                style={styles.btnGoogle}
+                // onPress={() =>
+                //     navigation.navigate('Register as', {name: 'Register as'})
+                //   }
+                > 
+                <Text style={styles.btnGoogle}>GOOGLE</Text>
+            </TouchableOpacity>
       </View>
 
 
       <View style={styles.buttonForgotPassword}>
-          <Button
-            style={styles.forgot}
-            title="forgot password?"
-            color='#64B5F6'
-          />
+          <TouchableOpacity 
+            style={styles.btnForgot}
+            // onPress={() =>
+            //     navigation.navigate('Register as', {name: 'Register as'})
+            //   }
+          > 
+            <Text style={styles.btnForgot}>Forgot Password?</Text>
+          </TouchableOpacity>
       </View>    
       <View style={styles.haveAccount}>
         <Text style={styles.dont}>Don't you have an Account?</Text>
-          <Button
-            style={styles.forgot}
-            title="Register"
-            color='#64B5F6'
-          />
+          <TouchableOpacity 
+            style={styles.dont}
+            // onPress={() =>
+            //     navigation.navigate('Register as', {name: 'Register as'})
+            //   }
+          > 
+            <Text style={styles.forgot}> Register</Text>
+          </TouchableOpacity>
       </View>
 
       
@@ -92,6 +103,7 @@ const styles = StyleSheet.create({
     padding:5,
     backgroundColor: '#fff',
     color: '#424242',
+    borderRadius:25,
 },
 
   textFields: {
@@ -119,8 +131,8 @@ const styles = StyleSheet.create({
    },
 
    forgot:{
-    ssize: 1,
-    color: 'white',
+    fontSize: 15,
+    color: '#64B5F6',
    },
 
    with:{
@@ -133,7 +145,12 @@ const styles = StyleSheet.create({
     margin:10,
     backgroundColor:'#003b59',
     borderRadius:25,
-    padding:5,
+    padding:10,
+  },
+
+  btnFacebook:{
+    color:'white',
+    textAlign:'center',
   },
 
   continueGoogle:{
@@ -141,7 +158,12 @@ const styles = StyleSheet.create({
     margin:10,
     backgroundColor:'#e2012b',
     borderRadius:25,
-    padding:5,
+    padding:10,
+  },
+
+  btnGoogle:{
+    color:'white',
+    textAlign:'center',
   },
 
   haveAccount:{
@@ -149,12 +171,16 @@ const styles = StyleSheet.create({
     flex:1,
     flexDirection: 'row',
     alignItems: 'center',
+    fontSize:15,
   },
 
   dont:{
     fontSize: 17,
     color: 'white',
-  }
+  },
   
+  btnForgot:{
+    color:'#64B5F6',
+  },
 
 });

@@ -8,15 +8,14 @@ export default function LoginButton() {
 const navigation=useNavigation();
     return (
         <View style={styles.container}>
-            <View style={styles.buttonLogin}>
-                <Button
-                    title="LOGIN"
-                    color='white'
-                    onPress={() =>
-                        navigation.navigate('Login', {name: 'login'})
-                      }
-                />
-            </View>
+            <TouchableOpacity 
+                style={styles.buttonLogin}
+                onPress={() =>
+                    navigation.navigate('Login', {name: 'login'})
+                  }
+                > 
+                <Text style={styles.btnLogin}>LOGIN</Text>
+            </TouchableOpacity>
         </View>
 
     )
@@ -28,12 +27,17 @@ const styles = StyleSheet.create({
         width:'70%',
     },
 
+    btnLogin:{
+        color:'white',
+        textAlign:'center',
+    },
+
     buttonLogin:{
         width:'100%',
         margin:10,
         backgroundColor:'#003b59',
         borderRadius:25,
-        padding:5,
+        padding:10,
     },
 
     buttonSignUp:{

@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Button, Image, TextInput, ScrollView} from 'react-native';
+import { StyleSheet, Text, View, Button, Image, TextInput, ScrollView, TouchableOpacity} from 'react-native';
 import Logo from './components/Logo';
 import Ionicons from '@expo/vector-icons/Ionicons';
 
@@ -52,26 +52,36 @@ export default function RegisterScreenDriver() {
         <Text style={styles.with}> ______________ Or Continue with ______________</Text>
         
         <View style={styles.continueFacebook}>
-          <Button
-              title="Facebook"
-              color='white'
-            />
-        </View>
-        <View style={styles.continueGoogle}>
-          <Button
-              title="Google"
-              color='white'
-            />
-        </View>
-
-   
+            <TouchableOpacity 
+                style={styles.btnFacebook}
+                // onPress={() =>
+                //     navigation.navigate('Register as', {name: 'Register as'})
+                //   }
+                > 
+                <Text style={styles.btnFacebook}>FACEBOOK</Text>
+            </TouchableOpacity>
+      </View>
+      <View style={styles.continueGoogle}>
+            <TouchableOpacity 
+                style={styles.btnGoogle}
+                // onPress={() =>
+                //     navigation.navigate('Register as', {name: 'Register as'})
+                //   }
+                > 
+                <Text style={styles.btnGoogle}>GOOGLE</Text>
+            </TouchableOpacity>
+      </View>
+      
         <View style={styles.haveAccount}>
           <Text style={styles.dont}>Already have an Account?</Text>
-            <Button
+            <TouchableOpacity 
               style={styles.forgot}
-              title="Login"
-              color='#64B5F6'
-            />
+              // onPress={() =>
+              //     navigation.navigate('Register as', {name: 'Register as'})
+              //   }
+            > 
+              <Text style={styles.forgot}> Register</Text>
+            </TouchableOpacity>
         </View>
 
         
@@ -97,8 +107,8 @@ const styles = StyleSheet.create({
   },
   
   title: {
-    textAlign: 'left',
-    alignItems:'left',
+    // textAlign: 'left',
+    // alignItems:'left',
     fontWeight: 'bold',
     fontSize: 25,
     marginTop: 20,
@@ -111,9 +121,10 @@ const styles = StyleSheet.create({
 
   input: {
     flex: 1,
-    padding: 5,
+    // padding: 5,
     backgroundColor: '#fff',
     color: '#424242',
+    borderRadius: 25,
 },
 
   textFields: {
@@ -123,7 +134,7 @@ const styles = StyleSheet.create({
     borderRadius: 25,
     marginTop: '5%',
     flexDirection: 'row',
-    alignItems: 'center',
+    // alignItems: 'center',
     backgroundColor: '#fff',
   },
 
@@ -163,7 +174,7 @@ const styles = StyleSheet.create({
     marginVertical: 20,
     flex:1,
     flexDirection: 'row',
-    alignItems: 'center',
+    // alignItems: 'center',
   },
 
   Register:{
@@ -179,7 +190,7 @@ const styles = StyleSheet.create({
     marginBottom: 20,
   },
   checkbox: {
-    alignSelf: 'center',
+    // alignSelf: 'center',
   },
   label: {
     margin: 8,
@@ -187,6 +198,36 @@ const styles = StyleSheet.create({
 
   dont:{
     color: 'white',
-  }
+  },
 
+  continueFacebook:{
+    width:'80%',
+    margin:10,
+    backgroundColor:'#003b59',
+    borderRadius:25,
+    padding:10,
+  },
+
+  btnFacebook:{
+    color:'white',
+    textAlign:'center',
+  },
+
+  continueGoogle:{
+    width:'80%',
+    margin:10,
+    backgroundColor:'#e2012b',
+    borderRadius:25,
+    padding:10,
+  },
+
+  btnGoogle:{
+    color:'white',
+    textAlign:'center',
+  },
+  
+  forgot:{
+    fontSize: 15,
+    color: '#64B5F6',
+   },
 });
