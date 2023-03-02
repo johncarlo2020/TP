@@ -41,17 +41,20 @@ export default function RegisterScreenDriver() {
           <Ionicons style={styles.icon} name="md-checkmark-circle" size={32} color="#003b59" />
           <TextInput secureTextEntry={true} style={styles.input} placeholder="Confirm Password"/>
         </View>
-
-        <View style={styles.Register}>
-            <Button
-                title="REGISTER"
-                color='white'
-            />
-          </View>
+          <View style={styles.Register}>
+            <TouchableOpacity 
+                style={styles.btnFacebook}
+                // onPress={() =>
+                //     navigation.navigate('Register as', {name: 'Register as'})
+                //   }
+                > 
+                <Text style={styles.btnFacebook}>register</Text>
+            </TouchableOpacity>
+      </View>
 
         <Text style={styles.with}> ______________ Or Continue with ______________</Text>
         
-        <View style={styles.continueFacebook}>
+      <View style={styles.continueFacebook}>
             <TouchableOpacity 
                 style={styles.btnFacebook}
                 // onPress={() =>
@@ -179,10 +182,10 @@ const styles = StyleSheet.create({
 
   Register:{
     width:'80%',
-    margin:10,
+    margin:20,
     backgroundColor:'#558B2F',
     borderRadius: 25,
-    padding:5,
+    padding:15,
 },
 
   checkboxContainer: {

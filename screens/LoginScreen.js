@@ -2,21 +2,50 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, Button, Image, TextInput, TouchableOpacity} from 'react-native';
 import Logo from './components/Logo';
 import Ionicons from '@expo/vector-icons/Ionicons';
+import React , { useContext, useState } from 'react';
+import  {AuthContext}  from './context/AuthContext';
+import Spinner from 'react-native-loading-spinner-overlay/lib';
+
 
 export default function LoginScreen() {
+
+  const [email,setEmail] = useState(null);
+  const [password,setPassword] = useState(null);
+  const {isLoading, login} = useContext(AuthContext);
+   
+
     return (
       <View style={styles.startContainer}>
+        <Spinner visible={isLoading} />
       <Logo/>
       <Text style={styles.title}>Login</Text>
       <View style={styles.textFields}>
         <Ionicons style={styles.icon} name="md-checkmark-circle" size={32} color="#003b59" />
-        <TextInput style={styles.input} placeholder="Email"/>
+        <TextInput 
+        style={styles.input} 
+        placeholder="Email"
+        value={email}
+        onChangeText={text => setEmail(text)}
+        />
       </View>
 
       <View style={styles.textFields}>
         <Ionicons style={styles.icon} name="eye" size={32} color="#003b59" />
-        <TextInput secureTextEntry={true} style={styles.input} placeholder="Password"/>
+        <TextInput 
+        secureTextEntry={true} 
+        style={styles.input} 
+        placeholder="Password"
+        value={password}
+        onChangeText={text => setPassword(text)}
+
+        />
       </View>
+      <Button
+        title="Login"
+        onPress={() => {
+          login(email,password);
+        }}
+      />
   
 
       <Text style={styles.with}> ______________ Or Continue with ______________</Text>
@@ -67,8 +96,7 @@ export default function LoginScreen() {
 
       
     </View>
-    )
-  }
+    )}
 
 
 
