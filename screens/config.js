@@ -1,0 +1,1 @@
+export const BASE_URL = 'http://31.187.75.224/traykpila-api/public/api';

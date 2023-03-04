@@ -58,7 +58,7 @@ export default function RegisterScreenDriver() {
 
         <Text style={styles.with}> ______________ Or Continue with ______________</Text>
         
-        <View style={styles.continueFacebook}>
+      <View style={styles.continueFacebook}>
             <TouchableOpacity 
                 style={styles.btnFacebook}
                 // onPress={() =>
@@ -186,7 +186,7 @@ const styles = StyleSheet.create({
 
   Register:{
     width:'80%',
-    margin:10,
+    margin:20,
     backgroundColor:'#558B2F',
     borderRadius: 25,
     padding:10,
