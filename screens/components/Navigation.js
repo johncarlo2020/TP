@@ -4,7 +4,7 @@ import { useNavigation,NavigationContainer } from '@react-navigation/native'
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import StartScreen from '../StartScreen';
 import LoginScreen from '../LoginScreen';
-import DriverScreen from '../DriverScreen';
+import DriverScreen from '../DriverScreens/CompleteRegistration';
 import RegisterButton from '../components/RegisterButton';
 import RegisterScreen from '../RegisterScreen';
 import RegisterAs from '../RegisterAs';
