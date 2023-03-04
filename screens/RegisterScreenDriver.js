@@ -2,8 +2,10 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, Button, Image, TextInput, ScrollView, TouchableOpacity} from 'react-native';
 import Logo from './components/Logo';
 import Ionicons from '@expo/vector-icons/Ionicons';
+import { useNavigation } from '@react-navigation/native';
 
 export default function RegisterScreenDriver() {
+  const navigation = useNavigation();
     return (
       <ScrollView>
       <View style={styles.startContainer}>
@@ -20,10 +22,10 @@ export default function RegisterScreenDriver() {
         </View>
 
         {/* ADDRESS */}
-        <View style={styles.textFields}>
+        {/* <View style={styles.textFields}>
           <Ionicons style={styles.icon} name="eye" size={32} color="#003b59" />
           <TextInput style={styles.input} placeholder="Address"/>
-        </View>
+        </View> */}
 
         {/* EMAIL */}
         <View style={styles.textFields}>
@@ -42,11 +44,16 @@ export default function RegisterScreenDriver() {
           <TextInput secureTextEntry={true} style={styles.input} placeholder="Confirm Password"/>
         </View>
 
+        {/* REGISTER BUTTON */}
         <View style={styles.Register}>
-            <Button
-                title="REGISTER"
-                color='white'
-            />
+            <TouchableOpacity 
+                style={styles.btnRegister}
+                onPress={() =>
+                    navigation.navigate('Documents', {name: 'Documents'})
+                  }
+                > 
+                <Text style={styles.btnFacebook}>REGISTER</Text>
+            </TouchableOpacity>
           </View>
 
         <Text style={styles.with}> ______________ Or Continue with ______________</Text>
@@ -182,7 +189,7 @@ const styles = StyleSheet.create({
     margin:10,
     backgroundColor:'#558B2F',
     borderRadius: 25,
-    padding:5,
+    padding:10,
 },
 
   checkboxContainer: {

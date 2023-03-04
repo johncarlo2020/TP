@@ -6,7 +6,7 @@ import { useNavigation } from '@react-navigation/native';
 
 
 export default function RegisterAs() {
-  const navigation=useNavigation();
+  const navigation = useNavigation();
     return (
       <View style={styles.startContainer}>
         <Logo/>
@@ -29,12 +29,6 @@ export default function RegisterAs() {
             </View>
               
             <View style={styles.buttonPassenger}>
-                {/* <Button
-                    style={styles.driver} 
-                    title="PASSENGER"
-                    color='white'
-                    onPress={() => navigation.navigate('Passenger', {name: 'Passenger'})}
-                /> */}
                 <TouchableOpacity 
                   style={styles.driver}
                   onPress={() =>

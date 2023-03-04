@@ -10,6 +10,12 @@ import RegisterScreen from './screens/RegisterScreen';
 import RegisterAs from './screens/RegisterAs';
 import { useNavigation } from '@react-navigation/native'
 import RegisterScreenDriver from './screens/RegisterScreenDriver';
+import CompleteRegistration from './screens/DriverScreens/CompleteRegistration';
+import PersonalInformation from './screens/DriverDocuments.js/PersonalInformation';
+import DriverLicense from './screens/DriverDocuments.js/DriverLicense';
+import Consents from './screens/DriverDocuments.js/Consents';
+import VehicleInformation from './screens/DriverDocuments.js/VehicleInformation copy';
+
 
 
 const Stack = createNativeStackNavigator();
@@ -25,6 +31,11 @@ export default function App() {
           <Stack.Screen name="Register as" component={RegisterAs} />
           <Stack.Screen name="Passenger" component={RegisterScreen} />
           <Stack.Screen name="Driver" component={RegisterScreenDriver} />
+          <Stack.Screen name="Documents" component={CompleteRegistration} />
+          <Stack.Screen name="Personal Information" component={PersonalInformation} />
+          <Stack.Screen name="Driver License" component={DriverLicense} />
+          <Stack.Screen name="Consents" component={Consents} />
+          <Stack.Screen name="Vehicle Information" component={VehicleInformation} />
       </Stack.Navigator>
     </NavigationContainer>
     
